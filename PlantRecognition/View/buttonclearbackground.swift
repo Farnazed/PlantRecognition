@@ -13,7 +13,7 @@ class buttonclearbackground: UIButton {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.layer.backgroundColor = CGColor(srgbRed: 255, green: 255, blue: 255, alpha: 0.2)
-        self.layer.borderWidth = 4
+        self.layer.borderWidth = 2
         self.layer.borderColor = UIColor.white.cgColor
         self.layer.cornerRadius = 10
     }
