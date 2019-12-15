@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -203,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="-882.60869565217399" y="98.4375"/>
         </scene>
-        <!--View Controller-->
+        <!--Plant Recognition Vc-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PlantRecognition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PlantRecognitionVc" customModule="PlantRecognition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -218,7 +218,7 @@
                                 <rect key="frame" x="64.666666666666686" y="528" width="285" height="54"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="285" id="MpU-rk-CT2"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="285" id="MpU-rk-CT2"/>
                                     <constraint firstAttribute="height" constant="54" id="UnG-x2-UoE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
@@ -226,6 +226,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="showPlantList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dSm-yz-EMZ"/>
                                     <segue destination="0J2-BE-btf" kind="presentation" modalPresentationStyle="overFullScreen" id="tjP-XR-W8M"/>
                                 </connections>
                             </button>
@@ -234,14 +235,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="1Hu-h1-y8I"/>
-                                    <constraint firstAttribute="width" constant="285" id="ukd-jZ-c6e"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="285" id="ukd-jZ-c6e"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <state key="normal" title="Detect a plant">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Hu7-tZ-fKk" kind="presentation" modalPresentationStyle="overFullScreen" id="7C5-N7-adO"/>
+                                    <action selector="detectPlantBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fGG-Q9-m86"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="plant recognition app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwe-4I-B5W">
@@ -335,13 +336,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="6wy-hT-DMJ">
                                 <rect key="frame" x="71" y="552.66666666666663" width="323" height="62.333333333333371"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="light" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvI-Nv-9dn">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="light" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvI-Nv-9dn">
                                         <rect key="frame" x="0.0" y="0.0" width="38" height="24"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <color key="textColor" red="0.16493295620000001" green="0.78039215689999997" blue="0.28222751039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="direct sunlight every day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1Zd-dv-yZt">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="direct sunlight every day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1Zd-dv-yZt">
                                         <rect key="frame" x="0.0" y="42" width="323" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
@@ -356,13 +357,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Dgj-V5-cJl">
                                 <rect key="frame" x="71" y="638" width="323" height="62.666666666666629"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="watering" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnk-VG-wdA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="watering" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnk-VG-wdA">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="24.333333333333332"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <color key="textColor" red="0.16493295620000001" green="0.78039215689999997" blue="0.28222751039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="direct sunlight every day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="pXI-bC-Ja2">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="direct sunlight every day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="pXI-bC-Ja2">
                                         <rect key="frame" x="0.0" y="42.333333333333371" width="323" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
@@ -386,7 +387,7 @@
                                 <rect key="frame" x="161" y="809" width="92" height="33"/>
                                 <color key="backgroundColor" red="0.16493295620000001" green="0.78039215689999997" blue="0.28222751039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="92" id="8at-Sk-Rz0"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="92" id="8at-Sk-Rz0"/>
                                     <constraint firstAttribute="height" constant="33" id="IPJ-nQ-dhl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -400,13 +401,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="9VK-e4-wgF">
                                 <rect key="frame" x="71" y="723.66666666666663" width="323" height="62.333333333333371"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Special characteristic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bed-0U-yvR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special characteristic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bed-0U-yvR">
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="24"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <color key="textColor" red="0.16493295620000001" green="0.78039215689999997" blue="0.28222751039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="direct sunlight every day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="VCr-b7-k8l">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="direct sunlight every day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="VCr-b7-k8l">
                                         <rect key="frame" x="0.0" y="42" width="323" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
@@ -437,7 +438,6 @@
                             <constraint firstItem="Dgj-V5-cJl" firstAttribute="leading" secondItem="S3f-OF-NWS" secondAttribute="trailing" constant="8" id="Dqs-Wd-gfS"/>
                             <constraint firstItem="S3f-OF-NWS" firstAttribute="leading" secondItem="PQD-aN-0kG" secondAttribute="leading" constant="20" id="Ibv-V2-Czw"/>
                             <constraint firstItem="PQD-aN-0kG" firstAttribute="trailing" secondItem="9VK-e4-wgF" secondAttribute="trailing" constant="20" id="Kbb-s2-y80"/>
-                            <constraint firstItem="xZ5-Ko-aGq" firstAttribute="leading" secondItem="PQD-aN-0kG" secondAttribute="leading" constant="10" id="LEA-uG-39B"/>
                             <constraint firstItem="ZZu-zq-usn" firstAttribute="centerX" secondItem="Ffa-Qg-u2e" secondAttribute="centerX" id="MuD-hl-Y6b"/>
                             <constraint firstItem="S3f-OF-NWS" firstAttribute="centerY" secondItem="Dgj-V5-cJl" secondAttribute="centerY" id="Nc2-pf-3EP"/>
                             <constraint firstItem="9VK-e4-wgF" firstAttribute="top" secondItem="Dgj-V5-cJl" secondAttribute="bottom" constant="23" id="OiH-3d-26I"/>
