@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -206,7 +206,7 @@
         <!--Plant Recognition Vc-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PlantRecognitionVc" customModule="PlantRecognition" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="predictionResult" id="BYZ-38-t0r" customClass="PlantRecognitionVc" customModule="PlantRecognition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -290,24 +290,27 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="Hu7-tZ-fKk" kind="presentation" identifier="PlantDetail" id="Nd6-fa-p4N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="97.767857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--PlantVC-->
         <scene sceneID="pxv-sx-e6t">
             <objects>
-                <viewController id="Hu7-tZ-fKk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlantVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hu7-tZ-fKk" customClass="PlantVC" customModule="PlantRecognition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ffa-Qg-u2e">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" image="ploant1" translatesAutoresizingMaskIntoConstraints="NO" id="MmD-hj-gqj">
-                                <rect key="frame" x="0.0" y="85" width="414" height="384"/>
+                                <rect key="frame" x="0.0" y="41" width="414" height="374"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMm-Mq-YKH">
-                                <rect key="frame" x="20" y="44" width="42" height="42"/>
+                                <rect key="frame" x="20" y="0.0" width="42" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="oCD-pa-fir"/>
                                     <constraint firstAttribute="width" constant="42" id="v9e-hc-qgj"/>
@@ -316,9 +319,12 @@
                                 <state key="normal" image="lessthan.circle" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="21" scale="large" weight="medium"/>
                                 </state>
+                                <connections>
+                                    <action selector="backBtnPressed:" destination="Hu7-tZ-fKk" eventType="touchUpInside" id="1v8-C5-MmH"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0gv-LT-mlm">
-                                <rect key="frame" x="20" y="562.33333333333337" width="43" height="43"/>
+                                <rect key="frame" x="20" y="508.33333333333326" width="43" height="43"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="43" id="7WZ-0f-QV9"/>
@@ -326,7 +332,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.sun" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="S3f-OF-NWS">
-                                <rect key="frame" x="20" y="646.33333333333326" width="43" height="41.666666666666629"/>
+                                <rect key="frame" x="20" y="592.33333333333326" width="43" height="41.666666666666629"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="QYt-ds-oaQ"/>
@@ -334,7 +340,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="6wy-hT-DMJ">
-                                <rect key="frame" x="71" y="552.66666666666663" width="323" height="62.333333333333371"/>
+                                <rect key="frame" x="71" y="498.66666666666669" width="323" height="62.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="light" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvI-Nv-9dn">
                                         <rect key="frame" x="0.0" y="0.0" width="38" height="24"/>
@@ -343,7 +349,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="direct sunlight every day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1Zd-dv-yZt">
-                                        <rect key="frame" x="0.0" y="42" width="323" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="41.999999999999943" width="323" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -355,7 +361,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Dgj-V5-cJl">
-                                <rect key="frame" x="71" y="638" width="323" height="62.666666666666629"/>
+                                <rect key="frame" x="71" y="584" width="323" height="62.666666666666629"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="watering" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnk-VG-wdA">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="24.333333333333332"/>
@@ -376,7 +382,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.sun" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="e36-Ih-VpZ">
-                                <rect key="frame" x="20" y="732" width="43" height="41.666666666666629"/>
+                                <rect key="frame" x="20" y="678" width="43" height="41.666666666666629"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="KyJ-2X-pPg"/>
@@ -384,7 +390,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZu-zq-usn" customClass="RoundCornerButoon" customModule="PlantRecognition" customModuleProvider="target">
-                                <rect key="frame" x="161" y="809" width="92" height="33"/>
+                                <rect key="frame" x="161" y="755" width="92" height="33"/>
                                 <color key="backgroundColor" red="0.16493295620000001" green="0.78039215689999997" blue="0.28222751039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="92" id="8at-Sk-Rz0"/>
@@ -395,11 +401,12 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveBtnPressed:" destination="Hu7-tZ-fKk" eventType="touchUpInside" id="ZnP-FW-5Vs"/>
                                     <segue destination="0J2-BE-btf" kind="presentation" modalPresentationStyle="overFullScreen" id="qQi-J3-dI1"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="9VK-e4-wgF">
-                                <rect key="frame" x="71" y="723.66666666666663" width="323" height="62.333333333333371"/>
+                                <rect key="frame" x="71" y="669.66666666666663" width="323" height="62.333333333333371"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Special characteristic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bed-0U-yvR">
                                         <rect key="frame" x="0.0" y="0.0" width="186" height="24"/>
@@ -420,7 +427,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ever green plant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZ5-Ko-aGq">
-                                <rect key="frame" x="10" y="489" width="394" height="33.666666666666629"/>
+                                <rect key="frame" x="10" y="435" width="394" height="33.666666666666686"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.16493295617805981" green="0.78039215689999997" blue="0.28222751043571986" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -459,6 +466,13 @@
                         <viewLayoutGuide key="safeArea" id="PQD-aN-0kG"/>
                     </view>
                     <navigationItem key="navigationItem" id="e4B-9u-yXd"/>
+                    <connections>
+                        <outlet property="lightDetail" destination="1Zd-dv-yZt" id="4Jn-bo-UzJ"/>
+                        <outlet property="plantImage" destination="MmD-hj-gqj" id="yIH-iQ-ymG"/>
+                        <outlet property="plantName" destination="xZ5-Ko-aGq" id="8ys-IV-6db"/>
+                        <outlet property="specialCharacteristic" destination="VCr-b7-k8l" id="qpx-IE-D0x"/>
+                        <outlet property="wateringDetail" destination="pXI-bC-Ja2" id="ba6-DX-17p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H79-RM-YaK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -493,13 +507,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iFw-5N-JbZ">
                                                     <rect key="frame" x="101" y="23.333333333333332" width="293" height="48.666666666666671"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ever green " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBU-TS-tmd">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="ever green " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBU-TS-tmd">
                                                             <rect key="frame" x="0.0" y="0.0" width="293" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.16493295620000001" green="0.78039215689999997" blue="0.28222751039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="watering specification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNA-3R-l0N">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="watering specification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNA-3R-l0N">
                                                             <rect key="frame" x="0.0" y="28.333333333333336" width="293" height="20.333333333333336"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <nil key="textColor"/>

@@ -18,6 +18,8 @@
 		F5278B9723A331AE000FE52F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5278B9623A331AE000FE52F /* Assets.xcassets */; };
 		F5278B9A23A331AE000FE52F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5278B9823A331AE000FE52F /* LaunchScreen.storyboard */; };
 		F5278BA723A4139E000FE52F /* buttonclearbackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5278BA623A4139E000FE52F /* buttonclearbackground.swift */; };
+		F5B52AD123A874F000A0B2FC /* PlantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B52AD023A874F000A0B2FC /* PlantVC.swift */; };
+		F5B52AD323A8906C00A0B2FC /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B52AD223A8906C00A0B2FC /* PlantModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		F5278B9923A331AE000FE52F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5278B9B23A331AE000FE52F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5278BA623A4139E000FE52F /* buttonclearbackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonclearbackground.swift; sourceTree = "<group>"; };
+		F5B52AD023A874F000A0B2FC /* PlantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantVC.swift; sourceTree = "<group>"; };
+		F5B52AD223A8906C00A0B2FC /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 			children = (
 				F501EB4023A5B114004A044B /* CameraHandler.swift */,
 				F501EB4223A5B461004A044B /* PlantRecognitionVc.swift */,
+				F5B52AD023A874F000A0B2FC /* PlantVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -61,6 +66,7 @@
 			children = (
 				F501EB4523A5B930004A044B /* PlantClassifier.swift */,
 				F501EB4723A86CD5004A044B /* FlowerShop.mlmodel */,
+				F5B52AD223A8906C00A0B2FC /* PlantModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,8 +186,10 @@
 				F501EB4623A5B930004A044B /* PlantClassifier.swift in Sources */,
 				F50BDB1423A42FE500D38E5C /* RoundCornerButoon.swift in Sources */,
 				F501EB4123A5B114004A044B /* CameraHandler.swift in Sources */,
+				F5B52AD323A8906C00A0B2FC /* PlantModel.swift in Sources */,
 				F501EB4823A86CD5004A044B /* FlowerShop.mlmodel in Sources */,
 				F501EB4323A5B461004A044B /* PlantRecognitionVc.swift in Sources */,
+				F5B52AD123A874F000A0B2FC /* PlantVC.swift in Sources */,
 				F5278BA723A4139E000FE52F /* buttonclearbackground.swift in Sources */,
 				F5278B8E23A331AB000FE52F /* AppDelegate.swift in Sources */,
 				F5278B9023A331AB000FE52F /* SceneDelegate.swift in Sources */,
