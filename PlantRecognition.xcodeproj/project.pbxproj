@@ -10,6 +10,7 @@
 		F501EB4123A5B114004A044B /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501EB4023A5B114004A044B /* CameraHandler.swift */; };
 		F501EB4323A5B461004A044B /* PlantRecognitionVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501EB4223A5B461004A044B /* PlantRecognitionVc.swift */; };
 		F501EB4623A5B930004A044B /* PlantClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F501EB4523A5B930004A044B /* PlantClassifier.swift */; };
+		F501EB4823A86CD5004A044B /* FlowerShop.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F501EB4723A86CD5004A044B /* FlowerShop.mlmodel */; };
 		F50BDB1423A42FE500D38E5C /* RoundCornerButoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50BDB1323A42FE500D38E5C /* RoundCornerButoon.swift */; };
 		F5278B8E23A331AB000FE52F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5278B8D23A331AB000FE52F /* AppDelegate.swift */; };
 		F5278B9023A331AB000FE52F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5278B8F23A331AB000FE52F /* SceneDelegate.swift */; };
@@ -23,6 +24,7 @@
 		F501EB4023A5B114004A044B /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		F501EB4223A5B461004A044B /* PlantRecognitionVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRecognitionVc.swift; sourceTree = "<group>"; };
 		F501EB4523A5B930004A044B /* PlantClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantClassifier.swift; sourceTree = "<group>"; };
+		F501EB4723A86CD5004A044B /* FlowerShop.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlowerShop.mlmodel; sourceTree = "<group>"; };
 		F50BDB1323A42FE500D38E5C /* RoundCornerButoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundCornerButoon.swift; sourceTree = "<group>"; };
 		F5278B8A23A331AB000FE52F /* PlantRecognition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantRecognition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5278B8D23A331AB000FE52F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				F501EB4523A5B930004A044B /* PlantClassifier.swift */,
+				F501EB4723A86CD5004A044B /* FlowerShop.mlmodel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				F501EB4623A5B930004A044B /* PlantClassifier.swift in Sources */,
 				F50BDB1423A42FE500D38E5C /* RoundCornerButoon.swift in Sources */,
 				F501EB4123A5B114004A044B /* CameraHandler.swift in Sources */,
+				F501EB4823A86CD5004A044B /* FlowerShop.mlmodel in Sources */,
 				F501EB4323A5B461004A044B /* PlantRecognitionVc.swift in Sources */,
 				F5278BA723A4139E000FE52F /* buttonclearbackground.swift in Sources */,
 				F5278B8E23A331AB000FE52F /* AppDelegate.swift in Sources */,
